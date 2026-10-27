@@ -1,1 +1,1 @@
-# sol-drainer-2
+# solanamanifest
